@@ -26,12 +26,11 @@ function check(event) {
         const even = isEven(m);
         let html;
         if (prime) {
-          html = ` <span class="colorInfo prime"><span class="square primeSquare">${m}</span>`;
-          square.classList.add("primeBox")
+          html = `<span class="square primeSquare">${m}</span>`;
         } else if (even) {
-          html = ` <span class="colorInfo even"><span class="square evenSquare">${m}</span>`;
+          html = `<span class="square evenSquare">${m}</span>`;
         } else {
-          html = ` <span class="colorInfo odd"><span class="square oddSquare">${m}</span>`;
+          html = `<span class="square oddSquare">${m}</span>`;
         }
         square.innerHTML = `${m}`
         square.classList.add("show")
