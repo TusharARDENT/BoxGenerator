@@ -419,9 +419,17 @@ section .wrapper {
 	gap: 20px;
 }
 
+.checkButton{
+	width: 10%;
+	padding: 10px 2%;
+	background-color:#D8AE7E;
+	border: none;
+	border-radius: 5px;
+	color: #FFE0B5;
+}
 
 .outputInfo {
-	padding: 10px 5%;
+	padding: 10px 1%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -431,11 +439,12 @@ section .wrapper {
 }
 
 .square{
-	width: 6%;
+	max-width: 10%;
+	width: 7%;
 	padding: 2px 0;
 	opacity: 60%;
 	border-radius: 5px;
-	font-size: 0.3em;
+	font-size: 0.6em;
 }
 .prime::after {
 	content: "\f0c8";
@@ -468,7 +477,7 @@ section .wrapper {
 }
 
 .colorInfo {
-	max-width: 40%;
+	max-width: 60%;
 	width: 30%;
 	display: flex;
 	justify-content: space-between;
@@ -479,4 +488,68 @@ section .wrapper {
 
 .colorInfo .square {
 	display: none;
+}
+
+@media (max-width: 1024px){
+	.inputaLabel {
+		font-size: 1em;
+	}
+
+	.output {
+		font-size: 1em;
+	}
+
+	.square{
+		width: 9%;
+		font-size: 0.7em;
+	}
+
+	.colorInfo {
+		max-width: 60%;
+		width: 40%;
+	}
+	.checkButton {
+		max-width: 40%;
+		width: 20%;
+	}
+}
+
+@media (max-width: 768px){
+	section .wrapper {
+		width: 90%;
+		padding: 100px 5%;
+		margin: 100px 5%;
+		border-radius: 20px;
+		text-align: center;
+		gap: 30px;
+		background-color: #FFE0B5;
+	}
+	
+	.inputaLabel {
+		font-size: 1em;
+	}
+
+	.output {
+		font-size: 1em;
+	}
+
+	.square{
+		width: 10%;
+		font-size: 0.6em;
+	}
+
+	.colorInfo {
+		max-width: 60%;
+		width: 50%;
+	}
+	.checkButton {
+		max-width: 40%;
+		width: 25%;
+	}
+
+	.display {
+		max-width: 100%;
+		width: 90%;
+		margin: 30px 5%;
+	}
 }
