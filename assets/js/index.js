@@ -8,50 +8,50 @@ input.addEventListener("keydown", keyDown);
 button.addEventListener("click", check);
 
 
-function keyDown(event){
-  if (!isValid2(input.value)) {
+function keyDown(event) {
+  if (isValid2(input.value)) {
     event.target.value = null;
+    output.innerHTML = "Please Enter a numeric Value";
+    output.classList.add("error");
     return;
   }
 }
 function check(event) {
+  output.classList.remove("error");
   const a = input.value;
   console.log(a);
   const valid = isValid(a);
+  const valid2 = isValid2(a);
 
-    if (valid) {
-      output.innerHTML = "";
-      for (let m = 1; m <= a; m++) {
-        const prime = isPrime(m);
-        const even = isEven(m);
-        let html;
-        if (prime) {
-          html = `<span class="square primeSquare">${m}</span>`;
-        } else if (even) {
-          html = `<span class="square evenSquare">${m}</span>`;
-        } else {
-          html = `<span class="square oddSquare">${m}</span>`;
-        }
-        square.innerHTML = `${m}`
-        square.classList.add("show")
-        output.insertAdjacentHTML("beforeend", html);      
-      }    
-    } else {
-      output.textContent = `You have entered a wrong value`;
+  if (valid && !valid2) {
+    output.innerHTML = "";
+    for (let m = 1; m <= a; m++) {
+      const prime = isPrime(m);
+      const even = isEven(m);
+      let html;
+      if (prime) {
+        html = `<span class="square primeSquare">${m}</span>`;
+      } else if (even) {
+        html = `<span class="square evenSquare">${m}</span>`;
+      } else {
+        html = `<span class="square oddSquare">${m}</span>`;
+      }
+      square.innerHTML = `${m}`
+      square.classList.add("show")
+      output.insertAdjacentHTML("beforeend", html);
     }
-    
+  } else {
+    event.target.value = null;
+    output.innerHTML = "Please Enter a numeric Value";
+    output.classList.add("error");
+    return;
   }
 
-
-
+}
 function isPrime(num) {
-  if (num <= 1) {
-    return false;
-  }
+  if (num <= 1) return false;
   for (let i = 2; i < num; i++) {
-    if (num % i == 0) {
-      return false;
-    }
+    if (num % i == 0) return false;
   }
   return true;
 }
@@ -69,8 +69,8 @@ function isValid(val) {
   return isValid;
 }
 
-function isvalid2(val){
-  const myRegEx2 = /[!@#$%^&*()_]/;
-  const isValid = myRegEx2.test(val);
+function isValid2(val) {
+  const myRegEx2 = /[!@#$%^&*()~`_=+{};:'".<,>]/;
+  const isValid = myRegEx2.exec(val);
   return isValid;
 }
