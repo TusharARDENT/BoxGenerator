@@ -37,8 +37,9 @@ function check(event) {
     }
   } else {
     event.target.value = null;
-    output.innerHTML = "Please Enter a numeric Value";
+    output.innerHTML = "Please Enter a numeric Value*";
     output.classList.add("error");
+    input.classList.add("errorInput");
     return;
   }
 }
@@ -64,6 +65,6 @@ function isValid(val) {
 }
 
 function isValid2(val) {
-  const myRegEx2 = /[!@#$%^&*()~`_=+{};:'".<,>]/;
+  const myRegEx2 = /[!@#$%^&*()~`_=+{};:'".<,>\A-z]/;
   return myRegEx2.test(val);
 }
