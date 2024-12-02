@@ -3,27 +3,22 @@ console.log("Hello JavaScript");
 const input = document.querySelector(".inputNum");
 const output = document.querySelector(".output");
 const square = document.querySelector(".primeSquare");
-const button = document.querySelector(".checkButton")
+const button = document.querySelector(".checkButton");
 input.addEventListener("keydown", keyDown);
 button.addEventListener("click", check);
 
-
 function keyDown(event) {
-  if (isValid2(input.value)) {
-    event.target.value = null;
-    output.innerHTML = "Please Enter a numeric Value";
-    output.classList.add("error");
-    return;
+  const key = event.key;
+  if (isValid2(key)) {
+    event.preventDefault();
   }
 }
 function check(event) {
   output.classList.remove("error");
-  const a = input.value;
-  console.log(a);
-  const valid = isValid(a);
-  const valid2 = isValid2(a);
 
-  if (valid && !valid2) {
+  const a = input.value;
+  const valid = isValid(a);
+  if (valid) {
     output.innerHTML = "";
     for (let m = 1; m <= a; m++) {
       const prime = isPrime(m);
@@ -36,8 +31,8 @@ function check(event) {
       } else {
         html = `<span class="square oddSquare">${m}</span>`;
       }
-      square.innerHTML = `${m}`
-      square.classList.add("show")
+      square.innerHTML = `${m}`;
+      square.classList.add("show");
       output.insertAdjacentHTML("beforeend", html);
     }
   } else {
@@ -46,7 +41,6 @@ function check(event) {
     output.classList.add("error");
     return;
   }
-
 }
 function isPrime(num) {
   if (num <= 1) return false;
@@ -71,6 +65,5 @@ function isValid(val) {
 
 function isValid2(val) {
   const myRegEx2 = /[!@#$%^&*()~`_=+{};:'".<,>]/;
-  const isValid = myRegEx2.exec(val);
-  return isValid;
+  return myRegEx2.test(val);
 }
