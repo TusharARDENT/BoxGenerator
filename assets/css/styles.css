@@ -161,6 +161,161 @@ sub {
 }
 
 /* 1.2. Clear Fix
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+/* Force scrollbar */
+html {
+	overflow-y: scroll;
+}
+
+/* Align radios and text inputs with their label */
+input[type=radio] {
+	vertical-align: text-bottom;
+}
+
+/* Hand cursor on clickable input elements */
+label,
+input[type=button],
+input[type=submit],
+button {
+	cursor: pointer;
+}
+
+strong {
+	font-weight: bold;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+em {
+	font-style: italic;
+}
+
+img {
+	width: 100%;
+	border: 0;
+	vertical-align: middle;
+}
+
+sub,
+sup {
+	vertical-align: baseline;
+	position: relative;
+	font-size: 55%;
+	line-height: 0;
+}
+
+sup {
+	top: -0.7em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+/* 1.2. Clear Fix
 			========================== */
 .cf:before,
 .cf:after {
@@ -259,10 +414,22 @@ section .wrapper {
 	font-size: 2em;
 	font-weight: 700;
 	color: #D8AE7E;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.checkButton{
+	width: 10%;
+	padding: 10px 2%;
+	background-color:#D8AE7E;
+	border: none;
+	border-radius: 5px;
+	color: #FFE0B5;
 }
 
 .outputInfo {
-	padding: 10px 5%;
+	padding: 10px 1%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -271,29 +438,46 @@ section .wrapper {
 	font-size: 1em;
 }
 
+.square{
+	max-width: 10%;
+	width: 7%;
+	padding: 2px 0;
+	opacity: 60%;
+	border-radius: 5px;
+	font-size: 0.6em;
+}
 .prime::after {
 	content: "\f0c8";
 	font-family: "FontAwesome";
 	color: green;
-	opacity: 70%;
 }
 
 .even::after {
 	content: "\f0c8";
 	font-family: "FontAwesome";
 	color: chocolate;
-	opacity: 70%;
 }
 
 .odd::after {
 	content: "\f0c8";
 	font-family: "FontAwesome";
 	color: purple;
-	opacity: 70%;
+}
+
+.primeSquare{
+	background-color: green;
+}
+
+.oddSquare{
+	background-color: purple;
+}
+
+.evenSquare{
+	background-color: chocolate;
 }
 
 .colorInfo {
-	max-width: 40%;
+	max-width: 60%;
 	width: 30%;
 	display: flex;
 	justify-content: space-between;
@@ -304,4 +488,68 @@ section .wrapper {
 
 .colorInfo .square {
 	display: none;
+}
+
+@media (max-width: 1024px){
+	.inputaLabel {
+		font-size: 1em;
+	}
+
+	.output {
+		font-size: 1em;
+	}
+
+	.square{
+		width: 9%;
+		font-size: 0.7em;
+	}
+
+	.colorInfo {
+		max-width: 60%;
+		width: 40%;
+	}
+	.checkButton {
+		max-width: 40%;
+		width: 20%;
+	}
+}
+
+@media (max-width: 768px){
+	section .wrapper {
+		width: 90%;
+		padding: 100px 5%;
+		margin: 100px 5%;
+		border-radius: 20px;
+		text-align: center;
+		gap: 30px;
+		background-color: #FFE0B5;
+	}
+	
+	.inputaLabel {
+		font-size: 1em;
+	}
+
+	.output {
+		font-size: 1em;
+	}
+
+	.square{
+		width: 10%;
+		font-size: 0.6em;
+	}
+
+	.colorInfo {
+		max-width: 60%;
+		width: 50%;
+	}
+	.checkButton {
+		max-width: 40%;
+		width: 25%;
+	}
+
+	.display {
+		max-width: 100%;
+		width: 90%;
+		margin: 30px 5%;
+	}
 }

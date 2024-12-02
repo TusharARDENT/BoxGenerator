@@ -2,40 +2,47 @@
 console.log("Hello JavaScript");
 const input = document.querySelector(".inputNum");
 const output = document.querySelector(".output");
-input.addEventListener("keypress", check);
+const square = document.querySelector(".primeSquare");
+const button = document.querySelector(".checkButton")
+input.addEventListener("keydown", keyDown);
+button.addEventListener("click", check);
 
-function check(event) {
-  const a = event.key;
-  while (event.key === " ") {
-    // event.target.value = "";
+
+function keyDown(event){
+  if (!isValid2(input.value)) {
+    event.target.value = null;
     return;
   }
+}
+function check(event) {
+  const a = input.value;
   console.log(a);
   const valid = isValid(a);
 
-  for (let m = 1; m <= a; m++) {
-    console.log(m);
-    console.log(isPrime(m), "Prime");
-    console.log(isEven(m), "Even");
-    console.log(isValid(m), "Odd");
-    const prime = isPrime(m);
-    const even = isEven(m);
     if (valid) {
-      if (prime) {
-        let html = ` <span class="colorInfo prime">Prime Number ${m} <span class="square primeSquare">square ${m}</span>`;
-        output.insertAdjacentHTML("afterend", html);
-      } else if (even) {
-        let html = ` <span class="colorInfo even">Even Number ${m} <span class="square evenSquare">square ${m}</span>`;
-        output.insertAdjacentHTML("afterend", html);
-      } else {
-        let html = ` <span class="colorInfo odd">Odd Number ${m} <span class="square oddSquare">square ${m}</span>`;
-        output.insertAdjacentHTML("afterend", html);
-      }
+      output.innerHTML = "";
+      for (let m = 1; m <= a; m++) {
+        const prime = isPrime(m);
+        const even = isEven(m);
+        let html;
+        if (prime) {
+          html = `<span class="square primeSquare">${m}</span>`;
+        } else if (even) {
+          html = `<span class="square evenSquare">${m}</span>`;
+        } else {
+          html = `<span class="square oddSquare">${m}</span>`;
+        }
+        square.innerHTML = `${m}`
+        square.classList.add("show")
+        output.insertAdjacentHTML("beforeend", html);      
+      }    
     } else {
       output.textContent = `You have entered a wrong value`;
     }
+    
   }
-}
+
+
 
 function isPrime(num) {
   if (num <= 1) {
@@ -57,7 +64,13 @@ function isEven(num) {
 }
 
 function isValid(val) {
-  const myRegEx = /^[0-9]/;
+  const myRegEx = /\d/;
   const isValid = myRegEx.test(val);
+  return isValid;
+}
+
+function isvalid2(val){
+  const myRegEx2 = /[!@#$%^&*()_]/;
+  const isValid = myRegEx2.test(val);
   return isValid;
 }
