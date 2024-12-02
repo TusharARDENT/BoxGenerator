@@ -248,31 +248,37 @@ section .wrapper {
 
 .display {
 	max-width: 100%;
-	width: 70%;
+	width: 90%;
 	padding: 20px 5%;
 	border-radius: 20px;
-	margin: 30px 15%;
+	margin: 30px 5%;
 	background-color: #FFF2D7;
 }
 
 .output {
-	margin: 10px 0;
+	margin: 20px 0;
 	font-size: 2em;
 	font-weight: 700;
 	color: #D8AE7E;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	gap: 20px;
+	justify-content: center;
+	gap: 30px;
 }
 
-.checkButton{
+.checkButton {
 	width: 10%;
 	padding: 10px 2%;
-	background-color:#D8AE7E;
+	background-color: #D8AE7E;
 	border: none;
 	border-radius: 5px;
 	color: #FFE0B5;
+}
+
+.checkButton:hover {
+	background-color: chocolate;
+	color: #FFF2D7;
 }
 
 .outputInfo {
@@ -284,14 +290,15 @@ section .wrapper {
 	font-size: 1em;
 }
 
-.square{
+.square {
 	max-width: 10%;
 	width: 8%;
-	padding: 2px 0;
+	padding: 6px 0;
 	opacity: 60%;
 	border-radius: 5px;
 	font-size: 0.6em;
 }
+
 .prime::after {
 	content: "\f0c8";
 	font-family: "FontAwesome";
@@ -310,15 +317,15 @@ section .wrapper {
 	color: purple;
 }
 
-.primeSquare{
+.primeSquare {
 	background-color: green;
 }
 
-.oddSquare{
+.oddSquare {
 	background-color: purple;
 }
 
-.evenSquare{
+.evenSquare {
 	background-color: chocolate;
 }
 
@@ -336,10 +343,18 @@ section .wrapper {
 	display: none;
 }
 
-.error{
+.error {
+	margin: 30.5px 0;
 	color: red;
+	font-size: 0.9em;
 }
-@media (max-width: 1024px){
+
+.errorInput {
+	padding: 9px 3%;
+	border: 1px solid red;
+}
+
+@media (max-width: 1024px) {
 	.inputaLabel {
 		font-size: 1em;
 	}
@@ -348,7 +363,7 @@ section .wrapper {
 		font-size: 1em;
 	}
 
-	.square{
+	.square {
 		width: 9%;
 		font-size: 0.7em;
 	}
@@ -357,12 +372,13 @@ section .wrapper {
 		max-width: 60%;
 		width: 40%;
 	}
+
 	.checkButton {
 		max-width: 40%;
 		width: 20%;
 	}
 
-	.display{
+	.display {
 		width: 90%;
 		padding: 20px 4%;
 		border-radius: 20px;
@@ -370,7 +386,7 @@ section .wrapper {
 	}
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
 	section .wrapper {
 		width: 90%;
 		padding: 100px 5%;
@@ -380,7 +396,7 @@ section .wrapper {
 		gap: 30px;
 		background-color: #FFE0B5;
 	}
-	
+
 	.inputaLabel {
 		font-size: 1em;
 	}
@@ -389,7 +405,7 @@ section .wrapper {
 		font-size: 1em;
 	}
 
-	.square{
+	.square {
 		width: 10%;
 		font-size: 0.6em;
 	}
@@ -398,6 +414,7 @@ section .wrapper {
 		max-width: 60%;
 		width: 50%;
 	}
+
 	.checkButton {
 		max-width: 40%;
 		width: 25%;
