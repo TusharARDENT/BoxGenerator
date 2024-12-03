@@ -221,12 +221,12 @@ section .wrapper {
 }
 
 .inputInfo {
-	margin: 20px 0;
+	margin: 20px 0 5px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 5px;
+	gap: 4px;
 }
 
 .inputHeading {
@@ -255,7 +255,7 @@ section .wrapper {
 }
 
 .inputError{
-	display: none;
+	visibility: hidden;
 }
 .display {
 	max-width: 100%;
@@ -351,14 +351,13 @@ section .wrapper {
 }
 
 .colorInfo .square {
-	display: none;
+	visibility: hidden;
 }
 
 .error {
-	margin: 2px 0;
 	color: red;
 	font-size: 0.9em;
-	display: block;
+	visibility: visible;
 }
 
 .errorInput {
@@ -366,15 +365,20 @@ section .wrapper {
 	border: 1px solid red;
 }
 
-.adjust{
-	margin-bottom: 0;
-
-}
 .adjust2 {
-	margin-bottom: 1px;
-	padding: 9px 3%;
+	padding: 9px 3% 9.5px;
+}
+.background{
+	background-color: blue;
 }
 
+.vanishPrime{
+	display: none;
+}
+
+.strikeThrough{
+	text-decoration: line-through 3px black;
+}
 @media (max-width: 1024px) {
 	.inputaLabel {
 		font-size: 1em;
