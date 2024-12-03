@@ -234,6 +234,15 @@ section .wrapper {
 	color: #D8AE7E;
 }
 
+<<<<<<< Updated upstream
+=======
+.inputLabel {
+	font-size: 1em;
+	font-weight: 600;
+	color: #D8AE7E;
+}
+
+>>>>>>> Stashed changes
 .inputNum {
 	max-width: 40%;
 	width: fit-content;
@@ -246,6 +255,13 @@ section .wrapper {
 	color: #D8AE7E;
 }
 
+<<<<<<< Updated upstream
+=======
+.inputError {
+	visibility: hidden;
+}
+
+>>>>>>> Stashed changes
 .display {
 	max-width: 100%;
 	width: 90%;
@@ -331,7 +347,11 @@ section .wrapper {
 
 .colorInfo {
 	max-width: 60%;
+<<<<<<< Updated upstream
 	width: 20%;
+=======
+	width: 25%;
+>>>>>>> Stashed changes
 	display: flex;
 	justify-content: space-between;
 	font-size: 1em;
@@ -354,6 +374,25 @@ section .wrapper {
 	border: 1px solid red;
 }
 
+<<<<<<< Updated upstream
+=======
+.adjust2 {
+	padding: 9px 3% 9.5px;
+}
+
+.background {
+	background-color: blue;
+}
+
+.vanishPrime {
+	display: none;
+}
+
+.strikeThrough {
+	text-decoration: line-through 3px black;
+}
+
+>>>>>>> Stashed changes
 @media (max-width: 1024px) {
 	.inputaLabel {
 		font-size: 1em;
@@ -370,7 +409,7 @@ section .wrapper {
 
 	.colorInfo {
 		max-width: 60%;
-		width: 40%;
+		width: 50%;
 	}
 
 	.checkButton {
@@ -412,7 +451,8 @@ section .wrapper {
 
 	.colorInfo {
 		max-width: 60%;
-		width: 50%;
+		width: 40%;
+		font-size: 0.7em;
 	}
 
 	.checkButton {
