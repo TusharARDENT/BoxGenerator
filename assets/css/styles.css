@@ -221,47 +221,43 @@ section .wrapper {
 }
 
 .inputInfo {
+	margin: 20px 0 5px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 20px;
+	gap: 4px;
 }
 
-.inputaLabel {
+.inputHeading {
 	font-size: 3em;
 	font-weight: 600;
 	color: #D8AE7E;
 }
 
-<<<<<<< Updated upstream
-=======
 .inputLabel {
 	font-size: 1em;
 	font-weight: 600;
 	color: #D8AE7E;
 }
 
->>>>>>> Stashed changes
 .inputNum {
-	max-width: 40%;
+	max-width: 100%;
 	width: fit-content;
 	padding: 10px 3%;
 	border-radius: 5px;
 	border: none;
+	margin: 10px 0;
 	font-weight: 600;
 	text-align: center;
 	background-color: #FFF2D7;
 	color: #D8AE7E;
 }
 
-<<<<<<< Updated upstream
-=======
 .inputError {
 	visibility: hidden;
 }
 
->>>>>>> Stashed changes
 .display {
 	max-width: 100%;
 	width: 90%;
@@ -347,35 +343,30 @@ section .wrapper {
 
 .colorInfo {
 	max-width: 60%;
-<<<<<<< Updated upstream
-	width: 20%;
-=======
-	width: 25%;
->>>>>>> Stashed changes
+	width: 15%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	font-size: 1em;
 	font-weight: 600;
 	color: #D8AE7E;
+	cursor: pointer;
 }
 
 .colorInfo .square {
-	display: none;
+	visibility: hidden;
 }
 
 .error {
-	margin: 30.5px 0;
 	color: red;
 	font-size: 0.9em;
+	visibility: visible;
 }
 
 .errorInput {
-	padding: 9px 3%;
+	padding: 10px 3%;
 	border: 1px solid red;
 }
 
-<<<<<<< Updated upstream
-=======
 .adjust2 {
 	padding: 9px 3% 9.5px;
 }
@@ -392,7 +383,6 @@ section .wrapper {
 	text-decoration: line-through 3px black;
 }
 
->>>>>>> Stashed changes
 @media (max-width: 1024px) {
 	.inputaLabel {
 		font-size: 1em;
@@ -409,7 +399,7 @@ section .wrapper {
 
 	.colorInfo {
 		max-width: 60%;
-		width: 50%;
+		width: 40%;
 	}
 
 	.checkButton {
@@ -451,8 +441,7 @@ section .wrapper {
 
 	.colorInfo {
 		max-width: 60%;
-		width: 40%;
-		font-size: 0.7em;
+		width: 50%;
 	}
 
 	.checkButton {
