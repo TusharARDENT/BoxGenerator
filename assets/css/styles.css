@@ -221,31 +221,42 @@ section .wrapper {
 }
 
 .inputInfo {
+	margin: 20px 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 20px;
+	gap: 5px;
 }
 
-.inputaLabel {
+.inputHeading {
 	font-size: 3em;
 	font-weight: 600;
 	color: #D8AE7E;
 }
 
+.inputLabel{
+	font-size: 1em;
+	font-weight: 600;
+	color: #D8AE7E;
+}
+
 .inputNum {
-	max-width: 40%;
+	max-width: 100%;
 	width: fit-content;
 	padding: 10px 3%;
 	border-radius: 5px;
 	border: none;
+	margin: 10px 0;
 	font-weight: 600;
 	text-align: center;
 	background-color: #FFF2D7;
 	color: #D8AE7E;
 }
 
+.inputError{
+	display: none;
+}
 .display {
 	max-width: 100%;
 	width: 90%;
@@ -331,9 +342,9 @@ section .wrapper {
 
 .colorInfo {
 	max-width: 60%;
-	width: 20%;
+	width: 15%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	font-size: 1em;
 	font-weight: 600;
 	color: #D8AE7E;
@@ -344,16 +355,21 @@ section .wrapper {
 }
 
 .error {
-	margin: 30.5px 0;
+	margin: 2px 0;
 	color: red;
 	font-size: 0.9em;
+	display: block;
 }
 
 .errorInput {
-	padding: 9px 3%;
+	padding: 9.5px 3%;
 	border: 1px solid red;
 }
 
+.adjust{
+	margin-bottom: 0;
+
+}
 @media (max-width: 1024px) {
 	.inputaLabel {
 		font-size: 1em;
