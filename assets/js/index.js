@@ -10,7 +10,7 @@ const primeLegend = document.querySelector(".prime");
 const evenLegend = document.querySelector(".even");
 const oddLegend = document.querySelector(".odd");
 const primeSquare = document.querySelector(".primeSquare");
-const colorInfo = document.querySelector(".colorInfo");
+
 input.addEventListener("keydown", keyDown);
 button.addEventListener("click", check);
 
@@ -44,10 +44,18 @@ function check(event) {
       square.innerHTML = `${m}`;
       output.insertAdjacentHTML("beforeend", html);
 
-      primeLegend.addEventListener("click", vanishPrime)
-      evenLegend.addEventListener("click", vanishEven)
-      oddLegend.addEventListener("click", vanishOdd)
-      
+      function removePrime(){
+        primeLegend.addEventListener("click", vanishPrime)
+      }
+      function removeEven(){
+        evenLegend.addEventListener("click", vanishEven)
+      }
+      function removeOdd(){
+        oddLegend.addEventListener("click", vanishOdd)
+      }
+      removePrime();
+      removeEven();
+      removeOdd();
     }
   } else {
     event.target.value = null;
