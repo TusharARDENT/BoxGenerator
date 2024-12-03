@@ -362,7 +362,7 @@ section .wrapper {
 }
 
 .errorInput {
-	padding: 9.5px 3%;
+	padding: 10px 3%;
 	border: 1px solid red;
 }
 
@@ -370,6 +370,11 @@ section .wrapper {
 	margin-bottom: 0;
 
 }
+.adjust2 {
+	margin-bottom: 1px;
+	padding: 9px 3%;
+}
+
 @media (max-width: 1024px) {
 	.inputaLabel {
 		font-size: 1em;
