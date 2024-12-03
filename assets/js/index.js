@@ -2,10 +2,15 @@
 console.log("Hello JavaScript");
 const input = document.querySelector(".inputNum");
 const output = document.querySelector(".output");
-const square = document.querySelector(".primeSquare");
+const square = document.querySelector(".square");
 const button = document.querySelector(".checkButton");
 const inputError = document.querySelector(".inputError")
 const inputInfo = document.querySelector(".inputInfo");
+const primeLegend = document.querySelector(".prime");
+const evenLegend = document.querySelector(".even");
+const oddLegend = document.querySelector(".odd");
+const primeSquare = document.querySelector(".primeSquare");
+const colorInfo = document.querySelector(".colorInfo");
 input.addEventListener("keydown", keyDown);
 button.addEventListener("click", check);
 
@@ -16,8 +21,11 @@ function keyDown(event) {
   }
 }
 function check(event) {
-  output.classList.remove("error");
-
+  inputError.classList.remove("error");
+  input.classList.remove("errorInput");
+  input.classList.remove("adjust2");
+  inputInfo.classList.remove("adjust")
+  output.innerHTML = "Please Enter a Number";
   const a = input.value;
   const valid = isValid(a);
   if (valid) {
@@ -34,16 +42,20 @@ function check(event) {
         html = `<span class="square oddSquare">${m}</span>`;
       }
       square.innerHTML = `${m}`;
-      square.classList.add("show");
       output.insertAdjacentHTML("beforeend", html);
+
+      primeLegend.addEventListener("click", vanishPrime)
+      evenLegend.addEventListener("click", vanishEven)
+      oddLegend.addEventListener("click", vanishOdd)
+      
     }
   } else {
     event.target.value = null;
     inputError.innerHTML = "Please Enter a numeric Value*";
     inputError.classList.add("error");
+    inputInfo.classList.add(".adjust");
     input.classList.add("errorInput");
-    input.classList.add("adjust");
-    inputInfo.classList.add("adjust")
+    input.classList.add("adjust2");
     return;
   }
 }
@@ -69,4 +81,28 @@ function isValid(val) {
 function isValid2(val) {
   const myRegEx2 = /[!@#$%^&*()~`_=+{};:'".<,>A-z]/;
   return myRegEx2.test(val);
+}
+
+function vanishPrime(){
+  const square = document.querySelectorAll(".primeSquare")
+  primeLegend.classList.toggle("strikeThrough")
+  square.forEach(element => {
+    element.classList.toggle("vanishPrime");
+  });
+}
+
+function vanishOdd(){
+  const square = document.querySelectorAll(".oddSquare")
+  oddLegend.classList.toggle("strikeThrough")
+  square.forEach(element => {
+    element.classList.toggle("vanishPrime");
+  });
+}
+
+function vanishEven(){
+  const square = document.querySelectorAll(".evenSquare")
+  evenLegend.classList.toggle("strikeThrough")
+  square.forEach(element => {
+    element.classList.toggle("vanishPrime");
+  });
 }
