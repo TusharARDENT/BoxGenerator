@@ -2,12 +2,14 @@
 console.log("Hello JavaScript");
 const input = document.querySelector(".inputNum");
 const output = document.querySelector(".output");
-const square = document.querySelector(".primeSquare");
+const square = document.querySelector(".square");
 const button = document.querySelector(".checkButton");
 const inputError = document.querySelector(".inputError")
 const inputInfo = document.querySelector(".inputInfo");
+const primeLegend = document.querySelector(".prime")
 input.addEventListener("keydown", keyDown);
 button.addEventListener("click", check);
+primeLegend.addEventListener("click", vanish)
 
 function keyDown(event) {
   const key = event.key;
@@ -42,7 +44,7 @@ function check(event) {
     inputError.innerHTML = "Please Enter a numeric Value*";
     inputError.classList.add("error");
     input.classList.add("errorInput");
-    input.classList.add("adjust");
+    input.classList.add("adjust2");
     inputInfo.classList.add("adjust")
     return;
   }
@@ -69,4 +71,9 @@ function isValid(val) {
 function isValid2(val) {
   const myRegEx2 = /[!@#$%^&*()~`_=+{};:'".<,>A-z]/;
   return myRegEx2.test(val);
+}
+
+
+function vanish(){
+
 }
