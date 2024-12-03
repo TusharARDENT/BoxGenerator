@@ -10,6 +10,7 @@ const primeLegend = document.querySelector(".prime");
 const evenLegend = document.querySelector(".even");
 const oddLegend = document.querySelector(".odd");
 const primeSquare = document.querySelector(".primeSquare");
+const colorInfo = document.querySelectorAll(".colorInfo");
 
 input.addEventListener("keydown", keyDown);
 button.addEventListener("click", check);
@@ -25,6 +26,11 @@ function check(event) {
   input.classList.remove("errorInput");
   input.classList.remove("adjust2");
   inputInfo.classList.remove("adjust")
+
+  colorInfo.forEach(element => {
+    element.classList.remove("strikeThrough");
+  });
+  
   output.innerHTML = "Please Enter a Number";
   const a = input.value;
   const valid = isValid(a);
