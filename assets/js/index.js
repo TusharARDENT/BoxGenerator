@@ -4,12 +4,14 @@ const input = document.querySelector(".inputNum");
 const output = document.querySelector(".output");
 const square = document.querySelector(".primeSquare");
 const button = document.querySelector(".checkButton");
+const inputError = document.querySelector(".inputError")
+const inputInfo = document.querySelector(".inputInfo");
 input.addEventListener("keydown", keyDown);
 button.addEventListener("click", check);
 
 function keyDown(event) {
   const key = event.key;
-  if (isValid2(key)) {
+  if (isValid2(key) &&  key !== "Backspace") {
     event.preventDefault();
   }
 }
@@ -37,9 +39,11 @@ function check(event) {
     }
   } else {
     event.target.value = null;
-    output.innerHTML = "Please Enter a numeric Value*";
-    output.classList.add("error");
+    inputError.innerHTML = "Please Enter a numeric Value*";
+    inputError.classList.add("error");
     input.classList.add("errorInput");
+    input.classList.add("adjust");
+    inputInfo.classList.add("adjust")
     return;
   }
 }
@@ -52,9 +56,7 @@ function isPrime(num) {
 }
 
 function isEven(num) {
-  if (num % 2 == 0) {
-    return true;
-  }
+  if (num % 2 == 0) return true;
   return false;
 }
 
@@ -65,6 +67,6 @@ function isValid(val) {
 }
 
 function isValid2(val) {
-  const myRegEx2 = /[!@#$%^&*()~`_=+{};:'".<,>\A-z]/;
+  const myRegEx2 = /[!@#$%^&*()~`_=+{};:'".<,>A-z]/;
   return myRegEx2.test(val);
 }
