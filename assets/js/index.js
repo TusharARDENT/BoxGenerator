@@ -50,9 +50,23 @@ function check(event) {
       square.innerHTML = `${m}`;
       output.insertAdjacentHTML("beforeend", html);
 
-        primeLegend.addEventListener("click", vanishPrime)  
-        evenLegend.addEventListener("click", vanishEven)
-        oddLegend.addEventListener("click", vanishOdd)
+        // evenLegend.addEventListener("click", vanishEven)
+        // oddLegend.addEventListener("click", vanishOdd)
+
+        if(!primeLegend.classList.contains("vanishPrime")){
+           primeLegend.addEventListener("click", vanishPrime);
+           if(!evenLegend.classList.contains("vanishPrime")){
+             evenLegend.addEventListener("click", vanishEven);
+             oddLegend.removeEventListener("click", vanishOdd);
+           }else if(!oddLegend.classList.contains("vanishPrime")){
+             oddLegend.addEventListener("click", vanishOdd);
+             evenLegend.removeEventListener("click", vanishEven);
+           }
+        }else if(oddLegend.classList.contains("vanishPrime") && !primeLegend.classList.contains("vanishPrime")){
+          primeLegend.addEventListener("click", vanishPrime);
+          oddLegend.addEventListener("click", vanishOdd);
+          evenLegend.removeEventListener("click", vanishEven);
+       }
     }
   } else {
     event.target.value = null;
