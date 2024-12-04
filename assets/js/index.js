@@ -10,7 +10,7 @@ const evenLegend = document.querySelector(".even");
 const oddLegend = document.querySelector(".odd");
 const legends = [oddLegend, primeLegend, evenLegend];
  
-let count = 0; // Track the number of count
+let count = 0; 
  
 input.addEventListener("keydown", keyDown);
 button.addEventListener("click", check);
@@ -23,16 +23,8 @@ function keyDown(event) {
 }
  
 function check(event) {
-  inputError.classList.remove("error");
-  input.classList.remove("errorInput", "adjust2");
-  inputInfo.classList.remove("adjust");
-  legends.forEach((legend) => {
-    legend.classList.remove("strikeThrough");
-    legend.style.pointerEvents = "auto";
-  });
-  count = 0; 
-  output.innerHTML = "Please Enter a Number";
- 
+  reset();
+
   const a = input.value;
   if (isValid(a)) {
     output.innerHTML = "";
@@ -51,11 +43,7 @@ function check(event) {
     }
     hideBox(); 
   } else {
-    input.value = null;
-    inputError.textContent = "Please Enter a numeric Value*";
-    inputError.classList.add("error");
-    inputInfo.classList.add("adjust");
-    input.classList.add("errorInput", "adjust2");
+    showError();
   }
 }
  
@@ -90,11 +78,12 @@ function vanish(square, legend) {
  
   if (legend.classList.contains("strikeThrough")) {
     count++;
+  }else{
+    count --;
   }
   square.forEach((element) => {
     element.classList.toggle("vanishPrime");
   });
- 
   toggleLegends();
 }
  
@@ -130,4 +119,24 @@ function toggleLegends() {
       legend.style.pointerEvents = "auto";
     });
   }
+}
+
+function showError(){
+  input.value = null;
+  inputError.textContent = "Please Enter a numeric Value*";
+  inputError.classList.add("error");
+  inputInfo.classList.add("adjust");
+  input.classList.add("errorInput", "adjust2");
+}
+
+function reset(){
+  inputError.classList.remove("error");
+  input.classList.remove("errorInput", "adjust2");
+  inputInfo.classList.remove("adjust");
+  legends.forEach((legend) => {
+    legend.classList.remove("strikeThrough");
+    legend.style.pointerEvents = "auto";
+  });
+  count = 0; 
+  output.innerHTML = "Please Enter a Number";
 }
