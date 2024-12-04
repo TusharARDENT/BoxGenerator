@@ -50,23 +50,7 @@ function check(event) {
       square.innerHTML = `${m}`;
       output.insertAdjacentHTML("beforeend", html);
 
-        // evenLegend.addEventListener("click", vanishEven)
-        // oddLegend.addEventListener("click", vanishOdd)
-
-        if(!primeLegend.classList.contains("vanishPrime")){
-           primeLegend.addEventListener("click", vanishPrime);
-           if(!evenLegend.classList.contains("vanishPrime")){
-             evenLegend.addEventListener("click", vanishEven);
-             oddLegend.removeEventListener("click", vanishOdd);
-           }else if(!oddLegend.classList.contains("vanishPrime")){
-             oddLegend.addEventListener("click", vanishOdd);
-             evenLegend.removeEventListener("click", vanishEven);
-           }
-        }else if(oddLegend.classList.contains("vanishPrime") && !primeLegend.classList.contains("vanishPrime")){
-          primeLegend.addEventListener("click", vanishPrime);
-          oddLegend.addEventListener("click", vanishOdd);
-          evenLegend.removeEventListener("click", vanishEven);
-       }
+      hideBox();
     }
   } else {
     event.target.value = null;
@@ -107,17 +91,17 @@ function isValid2(val) {
 //functions to make boxes invisible
 function vanishPrime(){
   const square = document.querySelectorAll(".primeSquare")
-  vanish(square, legends[0]);
+  vanish(square, primeLegend);
 }
 
 function vanishOdd(){
   const square = document.querySelectorAll(".oddSquare")
-  vanish(square, legends[1]);
+  vanish(square, oddLegend);
 }
 
 function vanishEven(){
   const square = document.querySelectorAll(".evenSquare")
-  vanish(square, legends[2]);
+  vanish(square, evenLegend);
 }
 
 function vanish(square, legends){
@@ -125,4 +109,14 @@ function vanish(square, legends){
   square.forEach(element => {
     element.classList.toggle("vanishPrime");
   });
+}
+
+function hideBox(){
+  primeLegend.addEventListener("click", vanishPrime)  
+  evenLegend.addEventListener("click", vanishEven)
+  oddLegend.addEventListener("click", vanishOdd)
+}
+
+function filterBox(hideBox){
+  
 }
