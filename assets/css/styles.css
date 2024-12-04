@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* ==========================================================================
    1. CSS Reset Code
    ========================================================================== */
@@ -6,120 +13,493 @@
    v2.0 | 20110126
    License: none (public domain)
    ========================================================================== */
-	 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
-	 blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
-	 ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
-	 dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
-	 tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
-	 figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
-	 time, mark, audio, video {
-		 margin: 0;
-		 padding: 0;
-		 border: 0;
-		 font-size: 100%;
-		 font: inherit;
-		 vertical-align: baseline;
-	 }
-	 
-	 /* HTML5 display-role reset for older browsers */
-	 article, aside, details, figcaption, figure,
-	 footer, header, hgroup, menu, nav, section {
-		 display: block;
-	 }
-	 
-	 /* Force scrollbar */
-	 html {
-		 overflow-y: scroll;
-	 }
-	 
-	 /* Align radios and text inputs with their label */
-	 input[type=radio] {
-		 vertical-align: text-bottom;
-	 }
-	 
-	 /* Hand cursor on clickable input elements */
-	 label,
-	 input[type=button],
-	 input[type=submit],
-	 button {
-		 cursor: pointer;
-	 }
-	 
-	 strong {
-		 font-weight: bold;
-		 font-family: inherit;
-		 font-size: inherit;
-	 }
-	 
-	 em {
-		 font-style: italic;
-	 }
-	 
-	 img {
-		 width: 100%;
-		 border: 0;
-		 vertical-align: middle;
-	 }
-	 
-	 sub,
-	 sup {
-		 vertical-align: baseline;
-		 position: relative;
-		 font-size: 55%;
-		 line-height: 0;
-	 }
-	 
-	 sup {
-		 top: -0.7em;
-	 }
-	 
-	 sub {
-		 bottom: -0.25em;
-	 }
-	 
-	 /* 1.2. Clear Fix
-			========================== */
-	 .cf:before,
-	 .cf:after {
-		 display: table;
-		 content: " ";
-	 }
-	 
-	 .cf:after {
-		 clear: both;
-	 }
-	 
-	 .cf {
-		 zoom: 1;
-	 }
-	 
-	 /* for all */
-	 body {
-		 -webkit-box-sizing: border-box;
-		 box-sizing: border-box;
-		 font-family: sans-serif;
-	 }
-	 
-	 a {
-		 display: inline-block;
-		 text-decoration: none;
-	 }
-	 
-	 li {
-		 display: inline-block;
-		 list-style-type: none;
-	 }
-	 
-	 /* for wrapper */
-	 .wrapper {
-		 max-width: 1360px;
-		 width: 60.1%;
-		 margin: 0 auto;
-	 }
-	 
-	 * {
-		 -webkit-box-sizing: border-box;
-		 box-sizing: border-box;
-		 padding: 0;
-		 margin: 0;
-	 }
+   html,
+   body,
+   div,
+   span,
+   applet,
+   object,
+   iframe,
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6,
+   p,
+   blockquote,
+   pre,
+   a,
+   abbr,
+   acronym,
+   address,
+   big,
+   cite,
+   code,
+   del,
+   dfn,
+   em,
+   img,
+   ins,
+   kbd,
+   q,
+   s,
+   samp,
+   small,
+   strike,
+   strong,
+   sub,
+   sup,
+   tt,
+   var,
+   b,
+   u,
+   i,
+   center,
+   dl,
+   dt,
+   dd,
+   ol,
+   ul,
+   li,
+   fieldset,
+   form,
+   label,
+   legend,
+   table,
+   caption,
+   tbody,
+   tfoot,
+   thead,
+   tr,
+   th,
+   td,
+   article,
+   aside,
+   canvas,
+   details,
+   embed,
+   figure,
+   figcaption,
+   footer,
+   header,
+   hgroup,
+   menu,
+   nav,
+   output,
+   ruby,
+   section,
+   summary,
+   time,
+   mark,
+   audio,
+   video {
+	   margin: 0;
+	   padding: 0;
+	   border: 0;
+	   font-size: 100%;
+	   font: inherit;
+	   vertical-align: baseline;
+   }
+   
+   /* HTML5 display-role reset for older browsers */
+   article,
+   aside,
+   details,
+   figcaption,
+   figure,
+   footer,
+   header,
+   hgroup,
+   menu,
+   nav,
+   section {
+	   display: block;
+   }
+   
+   /* Force scrollbar */
+   html {
+	   overflow-y: scroll;
+   }
+   
+   /* Align radios and text inputs with their label */
+   input[type=radio] {
+	   vertical-align: text-bottom;
+   }
+   
+   /* Hand cursor on clickable input elements */
+   label,
+   input[type=button],
+   input[type=submit],
+   button {
+	   cursor: pointer;
+   }
+   
+   strong {
+	   font-weight: bold;
+	   font-family: inherit;
+	   font-size: inherit;
+   }
+   
+   em {
+	   font-style: italic;
+   }
+   
+   img {
+	   width: 100%;
+	   border: 0;
+	   vertical-align: middle;
+   }
+   
+   sub,
+   sup {
+	   vertical-align: baseline;
+	   position: relative;
+	   font-size: 55%;
+	   line-height: 0;
+   }
+   
+   sup {
+	   top: -0.7em;
+   }
+   
+   sub {
+	   bottom: -0.25em;
+   }
+   
+   
+   /* 1.2. Clear Fix
+			   ========================== */
+   .cf:before,
+   .cf:after {
+	   display: table;
+	   content: " ";
+   }
+   
+   .cf:after {
+	   clear: both;
+   }
+   
+   .cf {
+	   zoom: 1;
+   }
+   
+   /* for all */
+   body {
+	   -webkit-box-sizing: border-box;
+	   box-sizing: border-box;
+	   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	   background-color: white;
+   }
+   
+   a {
+	   display: inline-block;
+	   text-decoration: none;
+   }
+   
+   li {
+	   display: inline-block;
+	   list-style-type: none;
+   }
+   
+   /* for wrapper */
+   .wrapper {
+	   max-width: 1360px;
+	   width: 60.1%;
+	   margin: 0 auto;
+   }
+   
+   * {
+	   -webkit-box-sizing: border-box;
+	   box-sizing: border-box;
+	   padding: 0;
+	   margin: 0;
+   }
+   
+   section .wrapper {
+	   max-width: 100%;
+	   width: 80%;
+	   padding: 50px 5%;
+	   margin: 100px 10%;
+	   border-radius: 20px;
+	   text-align: center;
+	   gap: 30px;
+	   background-color: #FFE0B5;
+   }
+   
+   .inputInfo {
+	   margin: 20px 0 5px;
+	   display: -webkit-box;
+	   display: -ms-flexbox;
+	   display: flex;
+	   -webkit-box-orient: vertical;
+	   -webkit-box-direction: normal;
+		   -ms-flex-direction: column;
+			   flex-direction: column;
+	   -webkit-box-pack: center;
+		   -ms-flex-pack: center;
+			   justify-content: center;
+	   -webkit-box-align: center;
+		   -ms-flex-align: center;
+			   align-items: center;
+	   gap: 4px;
+   }
+   
+   .output .box{
+	   display: none;
+   }
+   .inputHeading {
+	   font-size: 3em;
+	   font-weight: 600;
+	   color: #D8AE7E;
+   }
+   
+   .inputLabel{
+	   font-size: 1em;
+	   font-weight: 600;
+	   color: #D8AE7E;
+   }
+   
+   .inputNum {
+	   max-width: 100%;
+	   width: -webkit-fit-content;
+	   width: -moz-fit-content;
+	   width: fit-content;
+	   padding: 10px 3%;
+	   border-radius: 5px;
+	   border: none;
+	   margin: 10px 0;
+	   font-weight: 600;
+	   text-align: center;
+	   background-color: #FFF2D7;
+	   color: #D8AE7E;
+   }
+   
+   .inputError{
+	   visibility: hidden;
+   }
+   .display {
+	   max-width: 100%;
+	   width: 90%;
+	   padding: 20px 5%;
+	   border-radius: 20px;
+	   margin: 30px 5%;
+	   background-color: #FFF2D7;
+   }
+   
+   .output {
+	   margin: 20px 0;
+	   font-size: 2em;
+	   font-weight: 700;
+	   color: #D8AE7E;
+	   display: -webkit-box;
+	   display: -ms-flexbox;
+	   display: flex;
+	   -webkit-box-pack: justify;
+		   -ms-flex-pack: justify;
+			   justify-content: space-between;
+	   -ms-flex-wrap: wrap;
+		   flex-wrap: wrap;
+	   -webkit-box-pack: center;
+		   -ms-flex-pack: center;
+			   justify-content: center;
+	   gap: 30px;
+   }
+   
+   .checkButton {
+	   width: 10%;
+	   padding: 10px 2%;
+	   background-color: #D8AE7E;
+	   border: none;
+	   border-radius: 5px;
+	   color: #FFE0B5;
+   }
+   
+   .checkButton:hover {
+	   background-color: chocolate;
+	   color: #FFF2D7;
+   }
+   
+   .outputInfo {
+	   padding: 10px 1%;
+	   display: -webkit-box;
+	   display: -ms-flexbox;
+	   display: flex;
+	   -webkit-box-pack: justify;
+		   -ms-flex-pack: justify;
+			   justify-content: space-between;
+	   -webkit-box-align: start;
+		   -ms-flex-align: start;
+			   align-items: flex-start;
+	   line-height: 1.2em;
+	   font-size: 1em;
+   }
+   
+   .square {
+	   max-width: 10%;
+	   width: 8%;
+	   padding: 6px 0;
+	   opacity: 60%;
+	   border-radius: 5px;
+	   font-size: 0.6em;
+   }
+   
+   .prime::after {
+	   content: "\f0c8";
+	   font-family: "FontAwesome";
+	   color: green;
+   }
+   
+   .even::after {
+	   content: "\f0c8";
+	   font-family: "FontAwesome";
+	   color: chocolate;
+   }
+   
+   .odd::after {
+	   content: "\f0c8";
+	   font-family: "FontAwesome";
+	   color: purple;
+   }
+   
+   .primeSquare {
+	   background-color: green;
+   }
+   
+   .oddSquare {
+	   background-color: purple;
+   }
+   
+   .evenSquare {
+	   background-color: chocolate;
+   }
+   
+   .colorInfo {
+	   max-width: 60%;
+	   width: 20%;
+	   display: -webkit-box;
+	   display: -ms-flexbox;
+	   display: flex;
+	   -ms-flex-pack: distribute;
+		   justify-content: space-around;
+	   font-size: 1em;
+	   font-weight: 600;
+	   color: #D8AE7E;
+	   cursor: pointer;
+   }
+   
+   .colorInfo .square {
+	   visibility: hidden;
+   }
+   
+   .error {
+	   color: red;
+	   font-size: 0.9em;
+	   visibility: visible;
+   }
+   
+   .errorInput {
+	   padding: 10px 3%;
+	   border: 1px solid red;
+   }
+   
+   .adjust2 {
+	   padding: 9px 3% 9.5px;
+   }
+   .background{
+	   background-color: blue;
+   }
+   
+   .show{
+	   display: block;
+   }
+   
+   .vanishPrime{
+	   display: none;
+   }
+   
+   .strikeThrough{
+	   -webkit-text-decoration: line-through 3px black;
+			   text-decoration: line-through 3px black;
+   }
+   
+   .noToggle{
+	   pointer-events: none;
+   }
+   
+   .Toggle{
+	   pointer-events: visible;
+   }
+   @media (max-width: 1240px) {
+	   .inputaLabel {
+		   font-size: 1em;
+	   }
+   
+	   .output {
+		   font-size: 1em;
+	   }
+   
+	   .square {
+		   width: 9%;
+		   font-size: 0.7em;
+	   }
+   
+	   .colorInfo {
+		   max-width: 60%;
+		   width: 35%;
+	   }
+   
+	   .checkButton {
+		   max-width: 40%;
+		   width: 20%;
+	   }
+   
+	   .display {
+		   width: 90%;
+		   padding: 20px 4%;
+		   border-radius: 20px;
+		   margin: 30px 5%;
+	   }
+   }
+   
+   @media (max-width: 768px) {
+	   section .wrapper {
+		   width: 90%;
+		   padding: 100px 5%;
+		   margin: 100px 5%;
+		   border-radius: 20px;
+		   text-align: center;
+		   gap: 30px;
+		   background-color: #FFE0B5;
+	   }
+   
+	   .inputaLabel {
+		   font-size: 1em;
+	   }
+   
+	   .output {
+		   font-size: 1em;
+	   }
+   
+	   .square {
+		   width: 10%;
+		   font-size: 0.6em;
+	   }
+   
+	   .colorInfo {
+		   max-width: 60%;
+		   width: 50%;
+		   font-size: 0.6em;
+	   }
+   
+	   .checkButton {
+		   max-width: 40%;
+		   width: 25%;
+	   }
+   
+	   .display {
+		   max-width: 100%;
+		   width: 90%;
+		   margin: 30px 5%;
+	   }
+   }

@@ -11,19 +11,46 @@
   <link rel="stylesheet" media="screen" href="assets/vendor/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    crossorigin="anonymous" referrerpolicy="no-referrer">
   <!-- Default style-sheet is for 'media' type screen (color computer display).  -->
   <link rel="stylesheet" media="screen" href="assets/css/styles.css">
-  
-</head>
 <body>
   <div class="container">
     <!-- header content of the page -->
     <header></header>
     <!-- main content of the page -->
-    <main></main>
+    <main>
+      <section class="wrapperContainer">
+        <div class="wrapper">
+          <div class="">
+            <h1 class="inputHeading">Number Classifier</h1>
+            <div class="inputWrap inputInfo">
+              <label for="inputNum" class="inputLabel">Enter A number here</label>
+              <input type="text" id="inputNum" class="inputNum" name="inputNum"
+                placeholder="Enter a Number Here">
+                <span class="inputError">Output</span>
+            </div>
+            <button class="checkButton" type="submit">Submit</button>
+          </div>
+          <div class="display">
+            <div class="outputInfo">
+              <span class="colorInfo prime">Prime Number <span class="square ">square</span></span>
+              <span class="colorInfo even">Even Number <span class="square ">square</span></span>
+              <span class="colorInfo odd">Odd Number <span class="square ">square</span></span>
+            </div>
+            <div class="output">
+              <span>Output</span>
+              <span class="box primeSquare">prime</span>
+              <span class="box evenSquare">even</span>
+              <span class="box oddSquare">odd</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <!-- footer content of the page -->
-     <footer></footer>
+    <footer></footer>
+    <footer></footer>
   </div>
   <script src="assets/js/index.js"></script>
 </body>
