@@ -348,6 +348,7 @@ section .wrapper {
 	font-size: 1em;
 	font-weight: 600;
 	color: #D8AE7E;
+	cursor: pointer;
 }
 
 .colorInfo .square {
