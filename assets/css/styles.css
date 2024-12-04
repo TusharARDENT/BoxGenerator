@@ -376,7 +376,7 @@
    
    .colorInfo {
 	   max-width: 60%;
-	   width: 15%;
+	   width: 20%;
 	   display: -webkit-box;
 	   display: -ms-flexbox;
 	   display: flex;
@@ -430,7 +430,7 @@
    .Toggle{
 	   pointer-events: visible;
    }
-   @media (max-width: 1024px) {
+   @media (max-width: 1240px) {
 	   .inputaLabel {
 		   font-size: 1em;
 	   }
@@ -446,7 +446,7 @@
    
 	   .colorInfo {
 		   max-width: 60%;
-		   width: 40%;
+		   width: 35%;
 	   }
    
 	   .checkButton {
@@ -489,6 +489,7 @@
 	   .colorInfo {
 		   max-width: 60%;
 		   width: 50%;
+		   font-size: 0.6em;
 	   }
    
 	   .checkButton {
