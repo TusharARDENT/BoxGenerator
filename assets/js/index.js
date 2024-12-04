@@ -9,8 +9,8 @@ const inputInfo = document.querySelector(".inputInfo");
 const primeLegend = document.querySelector(".prime");
 const evenLegend = document.querySelector(".even");
 const oddLegend = document.querySelector(".odd");
-const primeSquare = document.querySelector(".primeSquare");
-const colorInfo = document.querySelectorAll(".colorInfo");
+const legends = [primeLegend, oddLegend, evenLegend];
+
 
 input.addEventListener("keydown", keyDown);
 button.addEventListener("click", check);
@@ -27,10 +27,10 @@ function check(event) {
   input.classList.remove("adjust2");
   inputInfo.classList.remove("adjust")
 
-  colorInfo.forEach(element => {
-    element.classList.remove("strikeThrough");
-  });
-  
+  for(let i = 0; i<legends.length; i++){
+    legends[i].classList.remove("strikeThrough");
+  }
+
   output.innerHTML = "Please Enter a Number";
   const a = input.value;
   const valid = isValid(a);
@@ -50,29 +50,21 @@ function check(event) {
       square.innerHTML = `${m}`;
       output.insertAdjacentHTML("beforeend", html);
 
-      function removePrime(){
-        primeLegend.addEventListener("click", vanishPrime)
-      }
-      function removeEven(){
+        primeLegend.addEventListener("click", vanishPrime)  
         evenLegend.addEventListener("click", vanishEven)
-      }
-      function removeOdd(){
         oddLegend.addEventListener("click", vanishOdd)
-      }
-      removePrime();
-      removeEven();
-      removeOdd();
     }
   } else {
     event.target.value = null;
     inputError.innerHTML = "Please Enter a numeric Value*";
     inputError.classList.add("error");
     inputInfo.classList.add(".adjust");
-    input.classList.add("errorInput");
-    input.classList.add("adjust2");
+    input.classList.add("errorInput", "adjust2");
     return;
   }
 }
+
+//functions to check type of numbers
 function isPrime(num) {
   if (num <= 1) return false;
   for (let i = 2; i < num; i++) {
@@ -86,6 +78,7 @@ function isEven(num) {
   return false;
 }
 
+//functions to validate the input
 function isValid(val) {
   const myRegEx = /\d/;
   const isValid = myRegEx.test(val);
@@ -97,25 +90,24 @@ function isValid2(val) {
   return myRegEx2.test(val);
 }
 
+//functions to make boxes invisible
 function vanishPrime(){
   const square = document.querySelectorAll(".primeSquare")
-  primeLegend.classList.toggle("strikeThrough")
-  square.forEach(element => {
-    element.classList.toggle("vanishPrime");
-  });
+  vanish(square, legends[0]);
 }
 
 function vanishOdd(){
   const square = document.querySelectorAll(".oddSquare")
-  oddLegend.classList.toggle("strikeThrough")
-  square.forEach(element => {
-    element.classList.toggle("vanishPrime");
-  });
+  vanish(square, legends[1]);
 }
 
 function vanishEven(){
   const square = document.querySelectorAll(".evenSquare")
-  evenLegend.classList.toggle("strikeThrough")
+  vanish(square, legends[2]);
+}
+
+function vanish(square, legends){
+  legends.classList.toggle("strikeThrough")
   square.forEach(element => {
     element.classList.toggle("vanishPrime");
   });
