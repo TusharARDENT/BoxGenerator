@@ -312,10 +312,6 @@ section .wrapper {
 
 .inputRange {
 	width: 100%;
-	display: flex;
-}
-
-.inputDiv .inputRange {
 	display: none;
 }
 
@@ -355,7 +351,7 @@ input[type=number] {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	gap: 30px;
+	gap: 20px;
 }
 
 .buttonsFloat {
@@ -379,6 +375,11 @@ input[type=number] {
 	color: #FFE0B5;
 	font-family: "Coiny", system-ui;
 	font-size: 400;
+}
+
+.checkButton2 {
+	text-align: center;
+	display: none;
 }
 
 .button {
@@ -467,7 +468,7 @@ input[type=number] {
 
 .clearButton {
 	float: right;
-	width: 3.5%;
+	width: 1.5em;
 	border: none;
 	border-radius: 4px;
 	font-family: "Coiny", system-ui;
@@ -498,7 +499,15 @@ input[type=number] {
 }
 
 .show {
+	display: flex;
+}
+
+.show2 {
 	display: block;
+}
+
+.hide {
+	display: none;
 }
 
 .vanishPrime {
@@ -540,6 +549,7 @@ input[type=number] {
 	}
 
 	.inputWithButton {
+		width: 60%;
 		margin-left: 16%;
 	}
 
@@ -587,6 +597,26 @@ input[type=number] {
 		width: 40%;
 		font-size: 0.7em;
 	}
+
+	.rangeInputBtn {
+		width: 30%;
+	}
+
+	.clearButton {
+		float: right;
+		width: 3.5%;
+		border: none;
+		border-radius: 4px;
+		font-family: "Coiny", system-ui;
+		font-size: 1.2em;
+		font-weight: 200;
+		line-height: 1.2em;
+		background-color: tomato;
+	}
+
+	.output {
+		gap: 20px
+	}
 }
 
 @media (max-width: 768px) {
@@ -616,10 +646,10 @@ input[type=number] {
 	}
 
 	.inputWithButton {
+		margin: 0;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		margin: 0;
 	}
 
 	.output {
@@ -635,6 +665,12 @@ input[type=number] {
 		max-width: 60%;
 		width: 50%;
 		font-size: 0.6em;
+	}
+
+	.outputInfo {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.buttons {
@@ -660,5 +696,27 @@ input[type=number] {
 	.checkButton {
 		width: 40%;
 		font-size: 0.5em;
+	}
+
+	.rangeInputBtn {
+		width: 25%;
+	}
+
+	.clearButton {
+		float: right;
+		width: 7%;
+		border: none;
+		border-radius: 4px;
+		font-family: "Coiny", system-ui;
+		font-size: 1.2em;
+		font-weight: 200;
+		line-height: 1.2em;
+		background-color: tomato;
+	}
+}
+
+@media (max-width: 384px) {
+	.rangeInputBtn {
+		width: 40%;
 	}
 }
