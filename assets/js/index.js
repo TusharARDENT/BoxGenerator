@@ -12,7 +12,7 @@ const legendInfo = document.querySelectorAll(".colorInfo");
 const legends = [oddLegend, primeLegend, evenLegend];
  
 let count = 0; 
- 
+let localInput;
 input.addEventListener("keydown", keyDown);
 button.addEventListener("click", check);
  
@@ -22,8 +22,13 @@ function keyDown(event) {
     event.preventDefault();
   }
 }
- 
-function check(event) {
+let num = localStorage.getItem("validInput");
+let num2 = JSON.parse(num);
+input.value = num2;
+
+window.addEventListener("load",check)
+
+function check() {
   reset();
   const a = input.value;
   if (isValid(a)) {
@@ -43,13 +48,15 @@ function check(event) {
           html = `<span class="square oddSquare">${m}</span>`;
         }
       output.insertAdjacentHTML("beforeend", html);
+
+      localStorage.setItem("validInput", JSON.stringify(a))
+      console.log(localStorage.getItem("validInput"))
     }
     hideBox(); 
   } else {
     showError();
   }
 }
- 
 //functions to check type of numbers
 function isPrime(num) {
   if (num <= 1) return false;
@@ -140,3 +147,5 @@ function reset(){
   count = 0; 
   output.innerHTML = "It's Empty..........<br> Please insert a number!!!";
 }
+
+console.log(localStorage.getItem("validInput"))
