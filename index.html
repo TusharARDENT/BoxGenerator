@@ -27,15 +27,34 @@
         <div class="wrapper">
           <div class="">
             <h1 class="inputHeading">Number Classifier</h1>
+            <div class="buttonsFloat">
+              <button class="button rangeInputBtn" type="submit">Range Input</button>
+              <button class="button singleInputBtn" type="submit">Single Input</button>
+              <button class="button clearButton" type="submit">Clear</button>
+            </div>
             <div class="inputWrap inputInfo">
               <label for="inputNum" class="inputLabel">Please enter a number here...</label>
               <div class="inputWithButton">
-                <div class="inputDiv">
-                  <input type="number" id="inputNum" class="inputNum" name="inputNum"
-                  placeholder="Insert a number">
-                  <span class="inputError">ErrorMessge</span>
+                <div class="inputDiv inputSingle">
+                  <div class="input1">
+                    <input type="number" id="inputNum" class="inputNum" name="inputNum"
+                    placeholder="Insert a number">
+                    <span class="inputError">ErrorMessge</span>
+                  </div>
+                  <div class="inputDiv inputRange">
+                    <div class="input2 inputStart">
+                      <input type="number" id="inputNum" class="inputNum" name="inputNum"
+                      placeholder="Insert a number">
+                      <span class="inputError">ErrorMessge</span>
+                    </div>
+                    <div class="input2 inputEnd">
+                      <input type="number" id="inputNum" class="inputNum" name="inputNum"
+                      placeholder="Insert a number">
+                      <span class="inputError">ErrorMessge</span>
+                    </div>
+                  </div>
                 </div>
-                <button class="checkButton" type="submit">Submit</button>
+                  <button class="checkButton" type="submit">Submit</button>
               </div>
             </div>
           </div>
