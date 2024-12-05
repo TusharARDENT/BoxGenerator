@@ -12,9 +12,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chango&family=Chewy&family=Coiny&family=DynaPuff:wght@400..700&family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chango&family=Chewy&family=Coiny&family=DynaPuff:wght@400..700&family=Luckiest+Guy&display=swap"
+    rel="stylesheet">
   <!-- Default style-sheet is for 'media' type screen (color computer display).  -->
   <link rel="stylesheet" media="screen" href="assets/css/styles.css">
 <body>
@@ -28,37 +30,33 @@
           <div class="">
             <h1 class="inputHeading">Number Classifier</h1>
             <div class="buttonsFloat">
-              <button class="button rangeInputBtn" type="submit">Range Input</button>
-              <button class="button singleInputBtn" type="submit">Single Input</button>
-              <button class="button clearButton" type="submit">Clear</button>
+              <button class="button rangeInputBtn" type="submit">Toggle Input</button>
             </div>
             <div class="inputWrap inputInfo">
               <label for="inputNum" class="inputLabel">Please enter a number here...</label>
               <div class="inputWithButton">
                 <div class="inputDiv inputSingle">
                   <div class="input1">
-                    <input type="number" id="inputNum" class="inputNum" name="inputNum"
-                    placeholder="Insert a number">
+                    <input type="number" id="inputNum" class="inputNum" name="inputNum" placeholder="Insert a number">
                     <span class="inputError">ErrorMessge</span>
                   </div>
                   <div class="inputDiv inputRange">
                     <div class="input2 inputStart">
-                      <input type="number" id="inputNum" class="inputNum" name="inputNum"
-                      placeholder="Insert a number">
+                      <input type="number" id="inputNum2" class="inputNum2" name="inputNum2" placeholder="from">
                       <span class="inputError">ErrorMessge</span>
                     </div>
                     <div class="input2 inputEnd">
-                      <input type="number" id="inputNum" class="inputNum" name="inputNum"
-                      placeholder="Insert a number">
+                      <input type="number" id="inputNum3" class="inputNum3" name="inputNum3" placeholder="to">
                       <span class="inputError">ErrorMessge</span>
                     </div>
                   </div>
                 </div>
-                  <button class="checkButton" type="submit">Submit</button>
+                <button class="checkButton" type="submit">Submit</button>
               </div>
             </div>
           </div>
           <div class="display">
+            <button class="colorInfo clearButton" type="submit">x</button>
             <div class="outputInfo">
               <span class="colorInfo prime">Prime Number <span class="square ">square</span></span>
               <span class="colorInfo even">Even Number <span class="square ">square</span></span>
