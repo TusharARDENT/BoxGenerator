@@ -256,7 +256,7 @@
    .inputLabel{
 	   font-size: 1em;
 	   font-weight: 400;
-	   color: #D8AE7E;
+	   color: rgb(165, 112, 42);
    }
    
    .inputNum {
@@ -273,7 +273,7 @@
 	   background-color: #FFF2D7;
 	   color: #D8AE7E;
 	   font-family: "Coiny", system-ui;
-		font-weight: 300;
+		font-weight: 200;
    }
    
    .inputError{
@@ -317,7 +317,7 @@
 	   margin: 20px 0;
 	   font-size: 2em;
 	   font-weight: 500;
-	   color: #D8AE7E;
+	   color: #d89d76;
 	   display: -webkit-box;
 	   display: -ms-flexbox;
 	   display: flex;
@@ -333,7 +333,7 @@
    }
    
    .checkButton {
-		max-height: 35px;
+		max-height: fit-content;
 	   width: 18%;
 	   padding: 10px 2%;
 	   border: none;
@@ -375,6 +375,7 @@
 	   opacity: 60%;
 	   border-radius: 5px;
 	   font-size: 0.6em;
+	   color: white;
    }
    
    .prime::after {
@@ -416,8 +417,8 @@
 	   -ms-flex-pack: distribute;
 		   justify-content: space-around;
 	   font-size: 1em;
-	   font-weight: 600;
-	   color: #D8AE7E;
+	   font-weight: 400;
+	   color: rgb(165, 112, 42);
 	   cursor: pointer;
 	   display: none;
    }
@@ -427,9 +428,11 @@
    }
    
    .error {
+	margin-bottom: 7.5px;
 	   color: red;
-	   font-size: 0.9em;
+	   font-size: 0.7em;
 	   visibility: visible;
+	   text-align: left;
    }
    
    .errorInput {
@@ -463,14 +466,11 @@
    }
 
    .adjustInput{
-	width: 93%;
+	/* width: 95%; */
 	padding: 9px 0;
 	margin-bottom: 1px;
    }
 
-   .adjustButton{
-	margin-left: 3%;
-   }
    @media (max-width: 1240px) {
 	   .inputaLabel {
 		   font-size: 1em;
@@ -543,17 +543,31 @@
 	   .colorInfo {
 		   max-width: 60%;
 		   width: 50%;
-		   font-size: 0.6em;
+		   font-size: 0.5em;
+		   font-weight: 100;
 	   }
    
 	   .checkButton {
-		   max-width: 40%;
-		   width: 40%;
+		   max-width: 50%;
+		   width: 50%;
 	   }
    
 	   .display {
 		   max-width: 100%;
-		   width: 90%;
-		   margin: 30px 5%;
+		   width: 100%;
+		   margin: 30px 0;
+	   }
+	   .adjustInput{
+		/* width: 100%; */
+		padding: 10px 0;
+		margin-bottom: 5px;
+	   }
+	
+	   .adjustButton{
+		margin-left: 4%;
+	   }
+
+	   .error{
+		font-size: 0.7em;
 	   }
    }
