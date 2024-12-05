@@ -291,6 +291,7 @@
    .inputDiv{
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
    }
 
 	input::-webkit-outer-spin-button,
@@ -332,20 +333,32 @@
 	   gap: 30px;
    }
    
-   .checkButton {
-		max-height: 35px;
-	   width: 18%;
-	   padding: 10px 2%;
+   .buttonsFloat{
+	max-width: 100%;
+	width: 80%;
+	padding: 0 10%;
+	margin: 0 10%;
+	display: flex;
+	gap: 5px;
+	justify-content: center;
+   }
+   .checkButton, .button{
+	width: 18%;
+	   padding: 5px 2%;
 	   border: none;
 	   border-radius: 5px;
 	   margin: 0 5%;
 	   background-color: #D8AE7E;
 	   color: #FFE0B5;
 	   font-family: "Coiny", system-ui;
+		font-size: 400;
+   }
 
+   .button{
+	width: 20%;
    }
    
-   .checkButton:hover {
+   .checkButton:hover, .button:hover {
 	   background-color: chocolate;
 	   color: #FFF2D7;
    }
@@ -375,6 +388,8 @@
 	   opacity: 60%;
 	   border-radius: 5px;
 	   font-size: 0.6em;
+	   color: white;
+	   font-weight: 300;
    }
    
    .prime::after {
@@ -416,7 +431,7 @@
 	   -ms-flex-pack: distribute;
 		   justify-content: space-around;
 	   font-size: 1em;
-	   font-weight: 600;
+	   font-weight: 400;
 	   color: #D8AE7E;
 	   cursor: pointer;
 	   display: none;
@@ -424,6 +439,7 @@
    
    .colorInfo .square {
 	   visibility: hidden;
+	   display: none;
    }
    
    .error {
@@ -472,14 +488,22 @@
 	margin-left: 3%;
    }
    @media (max-width: 1240px) {
+		section .wrapper {
+			width: 90%;
+			padding: 50px 5%;
+			margin: 50px 5%;
+		}
 	   .inputaLabel {
 		   font-size: 1em;
 	   }
-   
+	   
 	   .inputWithButton{
-			margin-left: 16;
+			margin-left: 16%;
 		}
 
+		.inputNum {
+			padding: 5px 3%;
+		   }
 	   .output {
 		   font-size: 1em;
 	   }
@@ -494,7 +518,7 @@
 		   width: 35%;
 	   }
    
-	   .checkButton {
+	   .buttons {
 		   max-width: 40%;
 		   width: 20%;
 	   }
@@ -505,17 +529,26 @@
 		   border-radius: 20px;
 		   margin: 30px 5%;
 	   }
+	   .colorInfo {
+		max-width: 60%;
+		width: 50%;
+		font-size: 0.8em;
+	}
+
+	   .buttonsFloat{
+		padding: 0 5%;
+	   }
+	   .button{
+		width: 40%;
+		font-size: 0.7em;
+	   }
    }
    
    @media (max-width: 768px) {
 	   section .wrapper {
 		   width: 90%;
-		   padding: 100px 5%;
-		   margin: 100px 5%;
-		   border-radius: 20px;
-		   text-align: center;
-		   gap: 30px;
-		   background-color: #FFE0B5;
+		   padding: 30px 5%;
+		   margin: 30px 5%;
 	   }
 	   .inputHeading {
 			font-size: 2em;
@@ -524,6 +557,16 @@
 		   font-size: 1em;
 	   }
 
+	   .inputNum {
+		max-width: 100%;
+		width: 80%;
+		padding: 5px 3%;
+	   }
+
+	   .inputDiv{
+		justify-content: center;
+		align-items: center;
+	   }
 	   .inputWithButton{
 			flex-direction: column;
 			align-items:center;
@@ -546,7 +589,7 @@
 		   font-size: 0.6em;
 	   }
    
-	   .checkButton {
+	   .buttons {
 		   max-width: 40%;
 		   width: 40%;
 	   }
@@ -555,5 +598,17 @@
 		   max-width: 100%;
 		   width: 90%;
 		   margin: 30px 5%;
+	   }
+
+	   .buttonsFloat{
+		padding: 0;
+		flex-direction: column;
+		gap: 5px;
+		justify-content: center;
+		align-items: center;
+	   }
+	   .button, .checkButton{
+		width: 40%;
+		font-size: 0.5em;
 	   }
    }
