@@ -8,6 +8,7 @@ const inputInfo = document.querySelector(".inputInfo");
 const primeLegend = document.querySelector(".prime");
 const evenLegend = document.querySelector(".even");
 const oddLegend = document.querySelector(".odd");
+const legendInfo = document.querySelectorAll(".colorInfo");
 const legends = [oddLegend, primeLegend, evenLegend];
  
 let count = 0; 
@@ -17,16 +18,18 @@ button.addEventListener("click", check);
  
 function keyDown(event) {
   const key = event.key;
-  if (isValid2(key) && key !== "Backspace") {
+  if (!isValid(key) && key !== "Backspace") {
     event.preventDefault();
   }
 }
  
 function check(event) {
   reset();
-
   const a = input.value;
   if (isValid(a)) {
+    legendInfo.forEach(element => {
+      element.classList.add("show");
+    });
     output.innerHTML = "";
     for (let m = 1; m <= a; m++) {
       const prime = isPrime(m);
@@ -68,10 +71,6 @@ function isValid(val) {
   return isValid;
 }
 
-function isValid2(val) {
-  const myRegEx2 = /[!@#$%^&*()~`_=+{};:'".<,>A-z]/;
-  return myRegEx2.test(val);
-}
 // Functions to toggle visibility of number boxes
 function vanish(square, legend) {
   legend.classList.toggle("strikeThrough");
@@ -123,10 +122,11 @@ function toggleLegends() {
 
 function showError(){
   input.value = null;
-  inputError.textContent = "Please Enter a numeric Value*";
+  inputError.textContent = "Please Enter A numeric Value*";
   inputError.classList.add("error");
-  inputInfo.classList.add("adjust");
-  input.classList.add("errorInput", "adjust2");
+  input.classList.add("errorInput");
+  button.classList.add("adjustButton");
+  input.classList.add("adjustInput");
 }
 
 function reset(){
@@ -138,5 +138,5 @@ function reset(){
     legend.style.pointerEvents = "auto";
   });
   count = 0; 
-  output.innerHTML = "Please Enter a Number";
+  output.innerHTML = "It's Empty..........<br> Please insert a number!!!";
 }
