@@ -256,7 +256,7 @@
    .inputLabel{
 	   font-size: 1em;
 	   font-weight: 400;
-	   color: rgb(165, 112, 42);
+	   color: #D8AE7E;
    }
    
    .inputNum {
@@ -273,7 +273,7 @@
 	   background-color: #FFF2D7;
 	   color: #D8AE7E;
 	   font-family: "Coiny", system-ui;
-		font-weight: 200;
+		font-weight: 300;
    }
    
    .inputError{
@@ -291,6 +291,7 @@
    .inputDiv{
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
    }
 
 	input::-webkit-outer-spin-button,
@@ -317,7 +318,7 @@
 	   margin: 20px 0;
 	   font-size: 2em;
 	   font-weight: 500;
-	   color: #d89d76;
+	   color: #D8AE7E;
 	   display: -webkit-box;
 	   display: -ms-flexbox;
 	   display: flex;
@@ -332,20 +333,32 @@
 	   gap: 30px;
    }
    
-   .checkButton {
-		max-height: fit-content;
-	   width: 18%;
-	   padding: 10px 2%;
+   .buttonsFloat{
+	max-width: 100%;
+	width: 80%;
+	padding: 0 10%;
+	margin: 0 10%;
+	display: flex;
+	gap: 5px;
+	justify-content: center;
+   }
+   .checkButton, .button{
+	width: 18%;
+	   padding: 5px 2%;
 	   border: none;
 	   border-radius: 5px;
 	   margin: 0 5%;
 	   background-color: #D8AE7E;
 	   color: #FFE0B5;
 	   font-family: "Coiny", system-ui;
+		font-size: 400;
+   }
 
+   .button{
+	width: 20%;
    }
    
-   .checkButton:hover {
+   .checkButton:hover, .button:hover {
 	   background-color: chocolate;
 	   color: #FFF2D7;
    }
@@ -376,6 +389,7 @@
 	   border-radius: 5px;
 	   font-size: 0.6em;
 	   color: white;
+	   font-weight: 300;
    }
    
    .prime::after {
@@ -418,21 +432,20 @@
 		   justify-content: space-around;
 	   font-size: 1em;
 	   font-weight: 400;
-	   color: rgb(165, 112, 42);
+	   color: #D8AE7E;
 	   cursor: pointer;
 	   display: none;
    }
    
    .colorInfo .square {
 	   visibility: hidden;
+	   display: none;
    }
    
    .error {
-	margin-bottom: 7.5px;
 	   color: red;
-	   font-size: 0.7em;
+	   font-size: 0.9em;
 	   visibility: visible;
-	   text-align: left;
    }
    
    .errorInput {
@@ -466,20 +479,31 @@
    }
 
    .adjustInput{
-	/* width: 95%; */
+	width: 93%;
 	padding: 9px 0;
 	margin-bottom: 1px;
    }
 
+   .adjustButton{
+	margin-left: 3%;
+   }
    @media (max-width: 1240px) {
+		section .wrapper {
+			width: 90%;
+			padding: 50px 5%;
+			margin: 50px 5%;
+		}
 	   .inputaLabel {
 		   font-size: 1em;
 	   }
-   
+	   
 	   .inputWithButton{
-			margin-left: 16;
+			margin-left: 16%;
 		}
 
+		.inputNum {
+			padding: 5px 3%;
+		   }
 	   .output {
 		   font-size: 1em;
 	   }
@@ -494,7 +518,7 @@
 		   width: 35%;
 	   }
    
-	   .checkButton {
+	   .buttons {
 		   max-width: 40%;
 		   width: 20%;
 	   }
@@ -505,17 +529,26 @@
 		   border-radius: 20px;
 		   margin: 30px 5%;
 	   }
+	   .colorInfo {
+		max-width: 60%;
+		width: 50%;
+		font-size: 0.8em;
+	}
+
+	   .buttonsFloat{
+		padding: 0 5%;
+	   }
+	   .button{
+		width: 40%;
+		font-size: 0.7em;
+	   }
    }
    
    @media (max-width: 768px) {
 	   section .wrapper {
 		   width: 90%;
-		   padding: 100px 5%;
-		   margin: 100px 5%;
-		   border-radius: 20px;
-		   text-align: center;
-		   gap: 30px;
-		   background-color: #FFE0B5;
+		   padding: 30px 5%;
+		   margin: 30px 5%;
 	   }
 	   .inputHeading {
 			font-size: 2em;
@@ -524,6 +557,16 @@
 		   font-size: 1em;
 	   }
 
+	   .inputNum {
+		max-width: 100%;
+		width: 80%;
+		padding: 5px 3%;
+	   }
+
+	   .inputDiv{
+		justify-content: center;
+		align-items: center;
+	   }
 	   .inputWithButton{
 			flex-direction: column;
 			align-items:center;
@@ -543,31 +586,29 @@
 	   .colorInfo {
 		   max-width: 60%;
 		   width: 50%;
-		   font-size: 0.5em;
-		   font-weight: 100;
+		   font-size: 0.6em;
 	   }
    
-	   .checkButton {
-		   max-width: 50%;
-		   width: 50%;
+	   .buttons {
+		   max-width: 40%;
+		   width: 40%;
 	   }
    
 	   .display {
 		   max-width: 100%;
-		   width: 100%;
-		   margin: 30px 0;
-	   }
-	   .adjustInput{
-		/* width: 100%; */
-		padding: 10px 0;
-		margin-bottom: 5px;
-	   }
-	
-	   .adjustButton{
-		margin-left: 4%;
+		   width: 90%;
+		   margin: 30px 5%;
 	   }
 
-	   .error{
-		font-size: 0.7em;
+	   .buttonsFloat{
+		padding: 0;
+		flex-direction: column;
+		gap: 5px;
+		justify-content: center;
+		align-items: center;
+	   }
+	   .button, .checkButton{
+		width: 40%;
+		font-size: 0.5em;
 	   }
    }
