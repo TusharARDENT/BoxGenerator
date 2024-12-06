@@ -5,6 +5,9 @@ const square = document.querySelector(".square");
 const button = document.querySelector(".checkButton");
 const button2 = document.querySelector(".checkButton2");
 const inputError = document.querySelector(".inputError");
+const inputErrorR1 = document.querySelector(".inputErrorR1");
+const inputErrorR2 = document.querySelector(".inputErrorR2");
+const inputErrorR = document.querySelector(".inputErrorR");
 const inputInfo = document.querySelector(".inputInfo");
 const primeLegend = document.querySelector(".prime");
 const evenLegend = document.querySelector(".even");
@@ -17,6 +20,10 @@ const singleInput = document.querySelector(".input1");
 const clearButton = document.querySelector(".clearButton");
 const input1Range = document.querySelector(".inputNum2");
 const input2Range = document.querySelector(".inputNum3");
+const displayBox = document.querySelector(".display");
+const outputInfo = document.querySelector(".outputInfo");
+
+console.log(outputInfo);
 
 let count = 0;
 let count2 = 0;
@@ -26,6 +33,7 @@ input1Range.addEventListener("keydown", keyDown);
 input2Range.addEventListener("keydown", keyDown);
 button.addEventListener("click", check);
 button2.addEventListener("click", check2);
+inputToggle.addEventListener("click", toggleInput);
 
 function keyDown(event) {
   const key = event.key;
@@ -39,10 +47,7 @@ let num2 = JSON.parse(localStorage.getItem("validInputR1"));
 input1Range.value = num2;
 let num3 = JSON.parse(localStorage.getItem("validInputR2"));
 input2Range.value = num3;
-
-window.addEventListener("load", check);
-
-inputToggle.addEventListener("click", toggleInput);
+// window.addEventListener("load", check);
 
 function check() {
   reset();
@@ -51,20 +56,8 @@ function check() {
     addLegends();
     output.innerHTML = "";
     for (let m = 1; m <= a; m++) {
-      const prime = isPrime(m);
-      const even = isEven(m);
-      let html;
-      if (prime) {
-        html = `<span class="square primeSquare">${m}</span>`;
-      } else if (even) {
-        html = `<span class="square evenSquare">${m}</span>`;
-      } else {
-        html = `<span class="square oddSquare">${m}</span>`;
-      }
-      output.insertAdjacentHTML("beforeend", html);
-
+      addBox(m);
       localStorage.setItem("validInput", JSON.stringify(a));
-      console.log(localStorage.getItem("validInput"));
     }
     hideBox();
   } else {
@@ -145,11 +138,21 @@ function showError() {
   input.value = null;
   inputError.textContent = "Please Enter A numeric Value*";
   inputError.classList.add("error");
-  input.classList.add("errorInput");
+  input.classList.add("errorInput", "adjustInput");
   button.classList.add("adjustButton");
-  input.classList.add("adjustInput");
 }
 
+function showRangeError(a, b) {
+  a.textContent = "Empty*";
+  a.classList.add("error");
+  b.classList.add("errorInput", "adjustInput");
+}
+
+function removeRangeError(a, b) {
+  a.textContent = "Empty*";
+  a.classList.remove("error");
+  b.classList.add("errorInput", "adjustInput");
+}
 function reset() {
   inputError.classList.remove("error");
   input.classList.remove("errorInput", "adjust2");
@@ -159,76 +162,107 @@ function reset() {
     legend.style.pointerEvents = "auto";
   });
   count = 0;
-  output.innerHTML = "It's Empty..........<br> Please insert a number!!!";
 }
 
+function resetRangeError() {
+  removeRangeError(inputErrorR1, input1Range);
+  removeRangeError(inputErrorR2, input2Range);
+}
 function toggleInput() {
   rangeInput.classList.toggle("show");
   singleInput.classList.toggle("hide");
   button2.classList.toggle("show2");
   button.classList.toggle("hide");
-  console.log("Hello");
 }
 
 function check2() {
-  console.log("Hello Check2");
+  reset();
+  addLegends();
   let a = input1Range.value;
   let b = input2Range.value;
+  let p = parseInt(a);
+  let q = parseInt(b);
+  console.log(p, q, typeof p, typeof q);
 
-  console.log(a, b);
-  if (a <= b) {
+  if (a == "" && b == "") {
+    showRangeError(inputErrorR1, input1Range);
+    showRangeError(inputErrorR2, input2Range);
+  } else if (a == "" && b != "") {
+    showRangeError(inputErrorR1, input1Range);
+    removeRangeError(inputErrorR2, input2Range);
+  } else if (b == "" && a != "") {
+    showRangeError(inputErrorR2, input2Range);
+    removeRangeError(inputErrorR1, input1Range);
+  } else if (p <= q) {
+    removeRangeError(inputErrorR1, input1Range);
+    removeRangeError(inputErrorR2, input2Range);
+    input1Range.classList.remove("errorInput", "adjustInput");
+    input2Range.classList.remove("errorInput", "adjustInput");
+
     console.log(true);
-    reset();
-    output.innerHTML = "";
     if (isValid(a) && isValid(b)) {
-      console.log("both valid");
       addLegends();
+      console.log("both valid");
       output.innerHTML = "";
-      for (let m = a; m <= b; m++) {
-        console.log(m);
-        const prime = isPrime(m);
-        const even = isEven(m);
-        let html;
-        if (prime) {
-          html = `<span class="square primeSquare">${m}</span>`;
-        } else if (even) {
-          html = `<span class="square evenSquare">${m}</span>`;
-        } else {
-          html = `<span class="square oddSquare">${m}</span>`;
-        }
-        output.insertAdjacentHTML("beforeend", html);
-        localStorage.setItem("validInputR1", JSON.stringify(a));
-        localStorage.setItem("validInputR2", JSON.stringify(b));
-        console.log(localStorage.getItem("validInputR1"));
-        console.log(localStorage.getItem("validInputR2"));
+      for (let m = p; m <= q; m++) {
+        addBox(m);
+        localStorage.setItem("validInputR1", JSON.stringify(p));
+        localStorage.setItem("validInputR2", JSON.stringify(q));
       }
     }
     hideBox();
-  } else {
-    alert("wrong range");
+  } else if (p > q) {
+    showRangeError(inputErrorR1, input1Range);
+    showRangeError(inputErrorR2, input2Range);
+    inputErrorR1.textContent = "invalid";
+    inputErrorR2.textContent = "invalid";
   }
 }
-
 function clear() {
-  legendsToggle();
-  reset();
+  removeLegends();
   input.value = null;
   input1Range.value = null;
   input2Range.value = null;
-  output.innerHTML =
-    '<span class="outputDesc">Get numbers printed according to their types.</span><br><span class="outputDesc">You just need to enter a number inside the input box.</span>';
+  output.innerHTML = `<div class="output">
+                <span class="outputDesc">Try with range of numbers.</span>
+                <span class="outputDesc">You just need to enter a starting and ending number inside the input box.</span>
+                <span class="box primeSquare">prime</span>
+                <span class="box evenSquare">even</span>
+                <span class="box oddSquare">odd</span>
+              </div>`;
 }
+
+function addBox(m) {
+  const prime = isPrime(m);
+  const even = isEven(m);
+  let html;
+  if (prime) {
+    html = `<span class="square primeSquare">${m}</span>`;
+  } else if (even) {
+    html = `<span class="square evenSquare">${m}</span>`;
+  } else {
+    html = `<span class="square oddSquare">${m}</span>`;
+  }
+  console.log(html);
+
+  // document.querySelector('.output-numbers').appendChild(html)
+  output.insertAdjacentHTML("beforeend", html);
+}
+
+clearButton.addEventListener("click", clear);
 
 function addLegends() {
   legendInfo.forEach((element) => {
     element.classList.add("show");
   });
+  clearButton.classList.add("show");
 }
 
 function removeLegends() {
   legendInfo.forEach((element) => {
-    element.classList.add("hide");
+    element.classList.remove("show");
   });
+  clearButton.classList.remove("show");
 }
 
 //for adding and removing legends
@@ -237,6 +271,3 @@ function legendsToggle() {
     element.classList.toggle("show");
   });
 }
-
-clearButton.addEventListener("click", clear);
-console.log(input1Range, input2Range);
