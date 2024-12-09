@@ -173,11 +173,11 @@ function toggleInput() {
   singleInput.classList.toggle("hide");
   button2.classList.toggle("show2");
   button.classList.toggle("hide");
+  clear();
 }
 
 function check2() {
   reset();
-  addLegends();
   let a = input1Range.value;
   let b = input2Range.value;
   let p = parseInt(a);
@@ -224,12 +224,9 @@ function clear() {
   input1Range.value = null;
   input2Range.value = null;
   output.innerHTML = `<div class="output">
-                <span class="outputDesc">Try with range of numbers.</span>
-                <span class="outputDesc">You just need to enter a starting and ending number inside the input box.</span>
-                <span class="box primeSquare">prime</span>
-                <span class="box evenSquare">even</span>
-                <span class="box oddSquare">odd</span>
-              </div>`;
+              <span class="outputDesc">Get numbers printed according to their types.</span>
+              <span class="outputDesc">You just need to enter a number inside the input box.</span>
+            </div>`;
 }
 
 function addBox(m) {
